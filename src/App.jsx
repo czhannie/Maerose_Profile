@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import './index.css';
-import profilePic from './assets/profile.jpg';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -69,7 +68,7 @@ function App() {
       {/* MAIN CONTENT */}
       <main className="profile-container">
         <div className="profile-img-wrapper">
-          <img src={profilePic} alt="Portrait of Maerose Boadilla" className="profile-img" />
+          <img src="/profile.jpg" alt="Portrait of Maerose Boadilla" className="profile-img" />
         </div>
 
         <h1 className="name-heading">Maerose Joscel Czarinah V. Boadilla</h1>
