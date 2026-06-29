@@ -1,0 +1,499 @@
+/* =========================================
+   1. BASE ELEGANT VARIABLES
+   ========================================= */
+:root {
+    --text-main: #4A3F44;
+    --primary-color: #9C526A; 
+    --accent-gold: #C4A47C;   
+    --bg-body: #FDF9FA;
+    --bg-card: #ffffff;
+    --line-color: rgba(196, 164, 124, 0.4);
+    --shadow-color: rgba(156, 82, 106, 0.08);
+    --bg-soft: #FDF4F6;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+body.dark-theme {
+    --text-main: #EAE6E7;
+    --primary-color: #D697AA; 
+    --accent-gold: #D2BA9B;   
+    --bg-body: #1E1A1C;
+    --bg-card: #2C2628;
+    --line-color: rgba(210, 186, 155, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --bg-soft: #3A3235;
+}
+
+/* =========================================
+   2. LAYOUT & STRUCTURE
+   ========================================= */
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    background-image: radial-gradient(var(--line-color) 1px, transparent 1px);
+    background-size: 40px 40px; 
+    color: var(--text-main);
+    margin: 0; /* Padding removed so header can be full-width */
+    line-height: 1.8;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   3. HEADER NAVIGATION (Fixed Centering)
+   ========================================= */
+.site-header {
+    width: 100%;
+    background-color: var(--bg-card);
+    border-bottom: 3px solid var(--accent-gold);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Pushes logo left, toggle right */
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 6px;
+    flex: 0 0 100px; /* Gives the logo a fixed width anchor */
+}
+
+.nav-links {
+    flex: 1; /* Makes this middle section expand to fill space */
+    display: flex;
+    justify-content: center; /* Forces the links to the middle */
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent; /* No line by default */
+    transition: all 0.3s ease;
+}
+
+/* This style applies only when the button is clicked/active */
+.nav-links a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-gold); /* Gold line for active link */
+}
+
+/* Optional: Subtle hover effect */
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.theme-toggle-btn {
+    flex: 0 0 42px; /* Fixed width to match logo and balance layout */
+    background: transparent;
+    border: 1.5px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* =========================================
+   4. MAIN PROFILE CONTAINER
+   ========================================= */
+.profile-container {
+    flex: 1; 
+    max-width: 650px;
+    width: 100%;
+    margin: 50px auto; /* Centers the card horizontally */
+    background: var(--bg-card);
+    padding: 60px 50px;
+    border-radius: 2px; 
+    box-shadow: 0 15px 40px var(--shadow-color);
+    position: relative;
+}
+
+/* Profile Image */
+.profile-img-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 40px auto; 
+    border-radius: 50%;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    border: 3px solid var(--accent-gold); 
+    padding: 3px;
+}
+
+.name-heading {
+    font-family: var(--font-heading);
+    color: var(--primary-color); 
+    font-weight: 400;
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.subtitle { 
+    font-family: var(--font-body); 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    letter-spacing: 4px; 
+    color: var(--text-main); 
+    margin-bottom: 50px; 
+    text-align: center; 
+}
+
+/* Editorial Styles */
+h2 { 
+    font-family: var(--font-heading); 
+    color: var(--primary-color); 
+    font-weight: normal; 
+    margin-top: 0; 
+}
+
+.section-title { 
+    font-size: 1.5rem; 
+    margin-bottom: 25px; 
+    margin-top: 70px; 
+    font-style: italic; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px; 
+}
+
+.section-title::after { 
+    content: ''; 
+    flex-grow: 1; 
+    height: 1px; 
+    background: var(--line-color); 
+}
+
+/* Quote block */
+blockquote {
+    border-left: none;
+    position: relative;
+    padding: 35px 40px;
+    margin: 50px 0; 
+    background-color: var(--bg-soft); 
+    border-radius: 4px;
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--text-main);
+    text-align: center;
+}
+
+blockquote::before {
+    content: "\201C";
+    font-size: 4rem;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+/* --- Editorial Hobbies Section --- */
+.hobbies-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    list-style: none; 
+    padding: 0; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.hobbies-card { 
+    position: relative; 
+    background: transparent;
+    border: 1px solid rgba(196, 164, 124, 0.3);
+    padding: 35px 20px; 
+    text-align: center;
+    border-radius: 2px; 
+    z-index: 1;
+    transition: all 0.5s ease;
+    cursor: default;
+}
+
+.hobbies-card:hover {
+    background-color: var(--bg-soft);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.hobbies-title { 
+    display: block; 
+    color: var(--primary-color); 
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-bottom: 6px; 
+}
+
+.hobbies-desc {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.btn { 
+    display: inline-block; 
+    background-color: transparent; 
+    color: var(--primary-color); 
+    text-decoration: none; 
+    padding: 12px 28px; 
+    border: 1px solid var(--primary-color); 
+    border-radius: 30px; 
+    font-family: var(--font-body); 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-size: 0.8rem; 
+    transition: all 0.3s ease; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+}
+
+.btn:hover { 
+    background-color: var(--primary-color); 
+    color: #fff; 
+}
+
+.contact-list { 
+    list-style: none; 
+    padding: 0; 
+    margin: 30px 0 0 0; 
+}
+
+.contact-list li { 
+    margin-bottom: 20px; 
+    padding-bottom: 15px; 
+    border-bottom: 1px dashed var(--accent-gold); 
+    font-size: 1.05rem; 
+    display: flex; 
+    align-items: baseline; 
+}
+
+.contact-list strong { 
+    font-family: var(--font-heading); 
+    font-style: italic; 
+    font-size: 1.1rem; 
+    color: var(--primary-color); 
+    width: 120px; 
+    flex-shrink: 0; 
+}
+
+.contact-list span { 
+    font-family: var(--font-heading); 
+    color: var(--text-main); 
+    font-size: 0.95rem; 
+    font-style: normal; 
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+footer { 
+    text-align: center; 
+    padding: 30px; 
+    color: var(--primary-color); 
+    margin-top: auto; 
+    font-size: 0.9rem; 
+    font-family: var(--font-body);
+}
+
+/* =========================================
+   6. SMOOTH SCROLLING & FIXES
+   ========================================= */
+html {
+    scroll-behavior: smooth; /* Makes clicking links glide elegantly */
+}
+
+h2[id] {
+    scroll-margin-top: 100px; /* Fixes the sticky header hiding the title! */
+}
+
+/* =========================================
+   7. CONTACT FORM & UPLOAD BUTTON
+   ========================================= */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 40px 0;
+    background-color: var(--bg-soft);
+    padding: 35px 30px;
+    border-radius: 4px;
+    border: 1px solid rgba(196, 164, 124, 0.3);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--line-color);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    border-radius: 2px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-btn {
+    align-self: flex-start;
+    margin: 15px 0 0 0; /* Adjust margin to sit nicely in form */
+    cursor: pointer;
+}
+
+/* =========================================
+   8. CARD-BASED PROJECTS GRID
+   ========================================= */
+.project-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.project-card {
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 20px; /* Matches the soft look of the image */
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 1px solid rgba(196, 164, 124, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.project-card h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.card-divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--primary-color);
+    margin-bottom: 25px;
+    opacity: 0.6;
+}
+
+.project-card p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-main);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    /* Increase this value to add more space before the link */
+    margin-top: 30px; 
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-gold);
+    padding-bottom: 2px;
+}
+
+/* =========================================
+   8.5 PROJECT TECH TAGS
+   ========================================= */
+.project-tech {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Changed from accent-gold to primary-color to match the theme heading */
+    color: var(--primary-color); 
+    font-weight: bold;
+    font-family: var(--font-body);
+    opacity: 0.9;
+}
+
+/* =========================================
+   LOGO STYLE
+   ========================================= */
+.logo {
+    font-family: var(--font-heading); /* Matches your headings */
+    color: var(--primary-color);      /* Uses your theme's pink/rose */
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 6px;              /* High-end wide spacing */
+    cursor: default;
+    margin-right: auto;               /* Pushes the logo to the left */
+}
+
+/* =========================================
+   CONTACT SUBTITLE STYLE
+   ========================================= */
+.contact-subtitle {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
