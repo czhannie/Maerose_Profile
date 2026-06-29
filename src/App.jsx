@@ -177,7 +177,7 @@ function App() {
 
         <h3 className="contact-subtitle">Direct Contact</h3>
         <ul className="contact-list">
-          <li><strong>Email</strong> <span>student@dmmmsu.edu.ph</span></li>
+          <li><strong>Email</strong> <span>mjcboadilla23100543@student.dmmmsu.edu.ph</span></li>
           <li><strong>Location</strong> <span>La Union, Philippines</span></li>
           <li><strong>Contact No.</strong> <span>+63 912 345 6789</span></li>
         </ul>
