@@ -1,16 +1,27 @@
-# React + Vite
+# 🌹 Personal Profile
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 👩‍💻 About Me
+Hi! I am Maerose Joscel Czarinah Boadilla, a Computer Science student at Don Mariano Marcos Memorial State University, South La Union Campus (DMMMSU-SLUC). I have a strong interest in full-stack web development and software engineering, with a passion for designing clean and aesthetic digital experiences. Outside of my academic and technical pursuits, my favorite ways to spend my free time include playing chess, reading Wattpad stories, and watching anime.
 
-Currently, two official plugins are available:
+## 🌟 Features
+* **Dynamic Backend Integration:** Upgraded from a static HTML page to a fully functional application using a Node.js and Express server.
+* **Database Connection:** Integrated with a MongoDB cloud database to successfully store and manage dynamic data.
+* **Modern Tech Stack Implementation:** Rebuilt using React (Vite) for a seamless, fast, and modern user interface.
+* **Dual-Hosting Deployment:** Professionally deployed across two platforms, utilizing Vercel for the frontend and Render for the backend API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎨 Design & Layout
+This personal profile application is designed with a "girly yet classic" pink aesthetic, balanced by a clean and structured layout. The main view is specifically organized to highlight my personal biography, followed by sections that utilize the newly integrated dynamic data structure.
 
-## React Compiler
+## 🛠️ Tech Stack
+* **Frontend:** React (Vite), JavaScript, CSS3
+* **Backend:** Node.js, Express.js
+* **Database:** MongoDB
+* **Deployment:** Vercel (Frontend) & Render (Backend)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Live Demo
+* **Frontend URL:** https://maerose-profile.vercel.app/
+* **Backend Server:** Hosted on Render
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> ✨ **Note:** This personal profile project and its documentation were developed and refined with the assistance of Google Gemini.
